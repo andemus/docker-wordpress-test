@@ -21,6 +21,7 @@ services:
     restart: always
     environment:
       WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: ${DB_NAME}
       WORDPRESS_DB_USER: ${DB_USER}
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
       WORDPRESS_DEBUG: ${WORDPRESS_DEBUG}
@@ -29,6 +30,7 @@ services:
 
   mailhog:
     image: mailhog/mailhog
+    restart: always
     ports:
       - "${MAILHOG_PORT_SMTP}:1025"
       - "${MAILHOG_PORT_EXTERNAL}:8025"

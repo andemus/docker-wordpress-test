@@ -1,4 +1,4 @@
-FROM wordpress:fpm
+FROM wordpress
 
 WORKDIR /var/www/html
 
